@@ -6,17 +6,18 @@
 class StateMachine
 {
     public:
-        StateMachine(int N);
+        StateMachine();
         virtual ~StateMachine();
         void AddState(state& newstate);
-        bool IsFunctional();
+        int GetNumberOfStates();
+        void tick();
+        state* CurrentState;
+
     protected:
 
     private:
-        state* states;
-        int NumberOfStates;
-        int CurrentNumberOfStates;
-        bool bIsFunctional = false;
+        std::vector<state*> states;
+        int NumberOfStates=0;
 };
 
 #endif // STATEMACHINE_H

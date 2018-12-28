@@ -7,7 +7,7 @@ int main()
     std::cout << "Hello world!" << std::endl;
     bool skillpressedflag = false;
 
-    StateMachine* Machine = new StateMachine(3);
+    StateMachine* Machine = new StateMachine();
     state* ready = new state();
     state* casting = new state();
     state* onCD = new state();
@@ -19,7 +19,7 @@ int main()
     Machine->AddState(*ready);
     Machine->AddState(*casting);
     Machine->AddState(*onCD);
-    ready->PrintTransitionNames();
-
+    Machine->CurrentState->PrintTransitionNames();
+    std::cout << Machine->GetNumberOfStates() << '\n';
     return 0;
 }

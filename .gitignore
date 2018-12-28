@@ -36,3 +36,9 @@
 *.layout
 *.depend
 bin/
+
+#VSCODE stuff
+.vscode/
+
+#executable
+main
