@@ -1,7 +1,6 @@
 #include <iostream>
-#include "state.h"
-#include "StateMachine.h"
-#include "Transition.h"
+#include "include/state.h"
+#include "include/StateMachine.h"
 
 
 int main()
@@ -21,7 +20,6 @@ int main()
     std::cout << Machine->IsFunctional() << '\n';
 
     bool skillpressedflag = false;
-    Transition* readytocasting = new Transition(*ready,*casting,skillpressedflag);
 
     return 0;
 }

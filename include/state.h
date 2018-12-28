@@ -2,7 +2,6 @@
 #ifndef STATE_H
 #define STATE_H
 #include <string>
-#include "Transition.h"
 
 class Transition;
 class state
