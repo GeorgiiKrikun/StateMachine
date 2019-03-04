@@ -7,19 +7,27 @@
 
 class state
 {
+    struct Transition{
+        bool& TransitonCondition;
+        short unsigned int Priority = 0;
+        state& TransitionTo;
+    };
+
     public:
         state();
         virtual ~state();
-        void namestate(std::string name);
-        void addTransition(state* stateto, bool* transitionflag);
-        void PrintTransitionNames();
+
     protected:
 
     private:
-        std::string statename;
-        std::vector<state*> TransitionTo;
-        std::vector<bool*> TransitionCondition;
-        int NumberOfTransitions;
+    state& Tick(float const & dt) const;
+    
+
+    std::string name;
+    std::vector<Transition> Transitions;
+
 };
+
+
 
 #endif // STATE_H
